@@ -1,77 +1,293 @@
-<html lang="en-US" class=" js borderradius boxshadow textshadow cssgradients fontface"><head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=640">
+<!-- saved from url=(0063)https://tovtry.com/ua/history/statti/dekabrysty_i_podillja.html -->
+<html class="" style="height: 100%;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+		<title>Security page</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=2c35b5a29e2704e56ea26688c7ec5bad38cea655" media="screen">
-    <link rel="stylesheet" href="/assets/css/mobile.css" media="handheld, only screen and (max-device-width:640px)">
-    <link rel="stylesheet" href="/assets/css/non-screen.css" media="handheld, only screen and (max-device-width:640px)">
+		<link rel="stylesheet" href="./Sources/main.css" type="text/css">
+	</head>
+	<body style="position: relative; min-height: 100%; top: 0px;">
+		<table width="90%" border="0">
+			<tbody>
+				<tr>
+					<td width="110" valign="top" align="center" style="background-color: whites; padding-right: 1%" class="unselect">
+						<p>
+							<font size="2">Site name</font>
+						</p>
+						<p align="center">
+							<font size="2">
+								<img src="./Sources/logo125.png" alt="Logo"><br><!--br-->
+							</font>
+						</p>
+						<font size="2" id="links"><br><!--br-->
+							<a href="https://tovtry.com/ua/index.html">В головне меню</a><br><br>
+							<a href="https://tovtry.com/ua/history/index.html">Історія / Література</a><br><br>
+							<a href="https://tovtry.com/ua/history/statti/index.html">Список статей</a>
+						</font>
+					</td>
+					<td width="2" valign="top" align="center" background="./Sources/separator.gif"></td>
+					<td id="MainData" valign="top" style="padding-left: 4%">
+						<h2 align="center">Security</h2>
+						<p class="abzac">Security now is very important part of production. Site's needs more security to prevent hacking users.</p>
+						<p class="abzac">Here are some data about web attacks from <a href="https://owasp.org/www-project-top-ten/">OWASP.org</a>:
+							<ol style="font-family: Consolas">
+								<li>
+									Injection <br>
+									For example: <br>
+									String query = "SELECT * FROM accounts WHERE custID='" + request.getParameter("id") + "'"; <br>
+								<br></li><li>
+									Broken Authentication <br>
+									For example, hacking personally some user or admin and getting its password. <br>
+									<br>To prevent: <br>
+									<ul>
+										* Where possible, implement multi-factor authentication <br>To prevent automated, credential stuffing, brute force, 
+										and stolen credential re-use attacks. <br>
+										* Do not ship or deploy with any default credentials, particularly for admin users. <br>
+										* Implement weak-password checks, such as testing new or changed passwords against a list of the top 10000 worst passwords. <br>
+										* Align password length, complexity and rotation policies with NIST 800-63 B’s guidelines in section 5.1.1 for Memorized Secrets or 
+										other modern, evidence based password policies. <br>
+										* Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by 
+										using the same messages for all outcomes. <br>
+										* Limit or increasingly delay failed login attempts. Log all failures and alert administrators when credential stuffing, 
+										brute force, or other attacks are detected. <br>
+										* Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. 
+										Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts. <br>
+										..and make options to recover accounts <br>
+									</ul>
+								<br></li><li>
+									Sensitive Data Exposure <br>
+									For example, an application encrypts credit card numbers in a database using automatic database encryption.  <br>
+									However, this data is automatically decrypted when retrieved, allowing a SQL injection flaw to retrieve credit card numbers in clear text. <br>
+									<br>To prevent: <br><ul>
+									* Classify data processed, stored or transmitted by an application. Identify which data is sensitive according to privacy laws, 
+									regulatory requirements, or business needs. <br>
+									* Apply controls as per the classification. <br>
+									* Don’t store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS compliant tokenization or even truncation. 
+									Data that is not retained cannot be stolen. <br>
+									* Make sure to encrypt all sensitive data at rest. <br>
+									* Ensure up-to-date and strong standard algorithms, protocols, and keys are in place; use proper key management. <br>
+									* Encrypt all data in transit with secure protocols such as TLS with perfect forward secrecy (PFS) ciphers, cipher prioritization by the server, 
+									and secure parameters. Enforce encryption using directives like HTTP Strict Transport Security (HSTS). <br>
+									* Disable caching for response that contain sensitive data. <br>
+									* Store passwords using strong adaptive and salted hashing functions with a work factor (delay factor), such as Argon2, scrypt, bcrypt or PBKDF2. <br>
+									* Verify independently the effectiveness of configuration and settings. <br>
+									</ul>
+								<br></li><li>
+									External Entities (XXE) (XML things...) <br>
+									For example: <br>
+									Numerous public XXE issues have been discovered, including attacking embedded devices.  <br>
+									XXE occurs in a lot of unexpected places, including deeply nested dependencies.  <br>
+									The easiest way is to upload a malicious XML file, if accepted: <br>
+									<br> Scenario #1: The attacker attempts to extract data from the server: <br>
+										< ? xml version="1.0" encoding="ISO-8859-1" ? > <br>
+										< ! DOCTYPE some [ <br>
+										< ! ELEMENT some ANY > <br>
+										< ! ENTITY xxe SYSTEM "file:///etc/passwd" >]> <br>
+										< some >&xxe;< / some > <br>
+									<br> Scenario #2: An attacker probes the server’s private network by changing the above ENTITY line to: <br>
+										< ! ENTITY xxe SYSTEM "https://192.168.1.1/private" >]> <br>
+									<br> Scenario #3: An attacker attempts a denial-of-service attack by including a potentially endless file: <br>
+										< ! ENTITY xxe SYSTEM "file:///dev/random" >]> <br>
+									<br>To prevent: <br><ul>
+									* Whenever possible, use less complex data formats such as JSON, and avoiding serialization of sensitive data. <br>
+									* Patch or upgrade all XML processors and libraries in use by the application or on the underlying operating system. 
+									Use dependency checkers. Update SOAP to SOAP 1.2 or higher. <br>
+									* Disable XML external entity and DTD processing in all XML parsers in the application, as per the OWASP Cheat Sheet ‘XXE Prevention’. <br>
+									* Implement positive (“whitelisting”) server-side input validation, filtering, or sanitization <br>To prevent hostile 
+									data within XML documents, headers, or nodes. <br>
+									* Verify that XML or XSL file upload functionality validates incoming XML using XSD validation or similar. <br>
+									* SAST tools can help detect XXE in source code, although manual code review is the best alternative in large, 
+									complex applications with many integrations. <br>
+									If these controls admin dont want to makeor other, consider using virtual patching, API security gateways, 
+									or Web Application Firewalls (WAFs) to detect, monitor, and block XXE attacks <br>
+									</ul>
+								<br></li><li>
+									Broken Access Control <br>
+									This can happen when site made very cheap, when API, requests made with no attension to security, so attacks can works like: <br>
+										pstmt.setString(1, request.getParameter("acc")); <br>
+										ResultSet results = pstmt.executeQuery(); <br>
 
-    <script src="/assets/js/modernizr.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <script src="/assets/js/headsmart.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $('#main_content').headsmart()
-      })
-    </script>
+										http://example.com/app/accountInfo?acc=notmyacc <br>
 
-  <!-- Begin Jekyll SEO tag v2.7.1 -->
-  <title>Welcome! | JeniaD.github.io</title>
-  <meta name="generator" content="Jekyll v3.9.0">
-  <meta property="og:title" content="Welcome!">
-  <meta property="og:locale" content="en_US">
-  <link rel="canonical" href="https://jeniad.github.io/">
-  <meta property="og:url" content="https://jeniad.github.io/">
-  <meta property="og:site_name" content="JeniaD.github.io">
-  <meta name="twitter:card" content="summary">
-  <meta property="twitter:title" content="Welcome!">
-  <script type="application/ld+json">
-  {"url":"https://jeniad.github.io/","@type":"WebSite","headline":"Welcome!","name":"JeniaD.github.io","@context":"https://schema.org"}</script>
-  <!-- End Jekyll SEO tag -->
-
-    </head>
-
-    <body>
-      <a id="forkme_banner" href="https://github.com/JeniaD/JeniaD.github.io">View on GitHub</a>
-      <div class="shell">
-
-        <header>
-          <span class="ribbon-outer">
-            <span class="ribbon-inner">
-              <h1>JeniaD.github.io</h1>
-              <h2></h2>
-            </span>
-            <span class="left-tail"></span>
-            <span class="right-tail"></span>
-          </span>
-        </header>
-          <div id="no-downloads">
-            <span class="inner">
-            </span>
-          </div>
-        <span class="banner-fix"></span>
-        <section id="main_content">
-          <h1 id="welcome" class="header-level-1">Welcome!</h1>
-  <p>This is a basic page.</p>
-  <pre><code class="language-C++">#include &lt;newcpp&gt;
-  int main() {
-    Print("Have fun!");
-  }
-  </code></pre>
-        </section>
-        <footer>
-          <span class="ribbon-outer">
-            <span class="ribbon-inner">
-                <p>Projects by <a href="https://github.com/JeniaD">JeniaD</a>.</p>
-            </span>
-            <span class="left-tail">Left-tail</span>
-            <span class="right-tail">Right-tail</span>
-          </span>
-          <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
-          <span class="octocat"></span>
-        </footer>
-
-      </div>
-  </body>
+										http://example.com/app/getappInfo <br>
+										http://example.com/app/admin_getappInfo <br>
+									<br>To prevent: <br><ul>
+									* With the exception of public resources, deny by default. <br>
+									* Implement access control mechanisms once and re-use them throughout the application, including minimizing CORS usage. <br>
+									* Model access controls should enforce record ownership, rather than accepting that the user can create, read, update, or delete any record. <br>
+									* Unique application business limit requirements should be enforced by domain models. <br>
+									* Disable web server directory listing and ensure file metadata (e.g. .git) and backup files are not present within web roots. <br>
+									* Log access control failures, alert admins when appropriate (e.g. repeated failures). <br>
+									* Rate limit API and controller access to minimize the harm from automated attack tooling. <br>
+									* JWT tokens should be invalidated on the server after logout. <br>
+									Developers and QA staff should include functional access control unit and integration tests. <br>
+									</ul>
+								<br></li><li>
+									Security Misconfiguration <br>
+									It can happen when anyone have access to veiwing files on server having its adress. Files that can help: <br>
+									/robots.txt <br>
+									/sitemap(.xml) <br>
+									/etc/passwd <br>
+									For example: Directory listing is not disabled on the server. An attacker discovers they can simply list directories.  <br>
+									The attacker finds and downloads the compiled Java classes, which they decompile and reverse engineer to view the code.  <br>
+									The attacker then finds a serious access control flaw in the application <br>
+									<br>To prevent: <br><ul>
+									* A repeatable hardening process that makes it fast and easy to deploy another environment that is properly locked down. 
+									Development, QA, and production environments should all be configured identically, with different credentials used in each environment. 
+									This process should be automated to minimize the effort required to setup a new secure environment. <br>
+									* A minimal platform without any unnecessary features, components, documentation, and samples. Remove or do not install unused features 
+									and frameworks. <br>
+									* A task to review and update the configurations appropriate to all security notes, updates and patches as part of the patch management 
+									process (see A9:2017-Using Components with Known Vulnerabilities). 
+									In particular, review cloud storage permissions (e.g. S3 bucket permissions). <br>
+									* A segmented application architecture that provides effective, secure separation between components or tenants, 
+									with segmentation, containerization, or cloud security groups (ACLs). <br>
+									* Sending security directives to clients, e.g. Security Headers. <br>
+									* An automated process to verify the effectiveness of the configurations and settings in all environments. <br>
+									</ul>
+								<br></li><li>
+									Cross-Site Scripting (XSS) <br>
+									For example: "< script > alert("Hi!") < / script >" <br>
+								<br></li><li>
+									Insecure Deserialization <br>
+									For example: <br>
+									A PHP forum uses PHP object serialization to save a “super” cookie, containing the user’s user ID, role, password hash, and other state: <br>
+										a:4:{i:0;i:132;i:1;s:7:"Mallory";i:2;s:4:"user"; i:3;s:32:"b6a8b3bea87fe0e05022f8f3c88bc960";} <br>
+									An attacker changes the serialized object to give themselves admin privileges: <br>
+										a:4:{i:0;i:1;i:1;s:5:"Alice";i:2;s:5:"admin"; i:3;s:32:"b6a8b3bea87fe0e05022f8f3c88bc960";} <br>
+									<br>To prevent: <br><ul>
+									Use safe architectural pattern: do not to accept serialized objects from untrusted sources or to use serialization mediums that only  <br>
+									permit primitive data types. <br>
+									* Implementing integrity checks such as digital signatures on any serialized objects <br>To prevent hostile object creation or 
+									data tampering. <br>
+									* Enforcing strict type constraints during deserialization before object creation as the code typically expects a definable 
+									set of classes. Bypasses to this technique have been demonstrated, so reliance solely on this is not advisable. <br>
+									* Isolating and running code that deserializes in low privilege environments when possible. <br>
+									* Log deserialization exceptions and failures, such as where the incoming type is not the expected type, or the deserialization 
+									throws exceptions. <br>
+									* Restricting or monitoring incoming and outgoing network connectivity from containers or servers that deserialize. <br>
+									* Monitoring deserialization, alerting if a user deserializes constantly. <br>
+									</ul>
+								<br></li><li>
+									Using Components with Known Vulnerabilities <br>
+									Like remote code execution, search engines... <br>
+									<br>To prevent: <br><ul>
+									* Remove unused dependencies, unnecessary features, components, files, and documentation. <br>
+									* Continuously inventory the versions of both client-side and server-side components (e.g. frameworks, libraries) and their dependencies 
+									using tools like versions, DependencyCheck, retire.js, etc. Continuously monitor sources like CVE and NVD for vulnerabilities in the components. 
+									Use software composition analysis tools to automate the process. Subscribe to email alerts for security vulnerabilities related to 
+									components you use. <br>
+									* Only obtain components from official sources over secure links. Prefer signed packages to reduce the chance of including a modified, 
+									malicious component. <br>
+									* Monitor for libraries and components that are unmaintained or do not create security patches for older versions. 
+									If patching is not possible, consider deploying a virtual patch to monitor, detect, or protect against the discovered issue. <br>
+									</ul>
+								<br></li><li>
+									Insufficient Logging & Monitoring <br>
+									Examples: <br>
+									Scenario #1: An open source project forum software run by a small team was hacked using a flaw in its software. The attackers managed to 
+									wipe out the internal source code repository containing the next version, and all of the forum contents. Although source could be recovered, 
+									the lack of monitoring, logging or alerting led to a far worse breach. The forum software project is no longer 
+									active as a result of this issue. <br>
+									Scenario #2: An attacker uses scans for users using a common password. They can take over all accounts using this password. 
+									For all other users, this scan leaves only one false login behind. After some days, this may be repeated with a different password. <br>
+									Scenario #3: A major US retailer reportedly had an internal malware analysis sandbox analyzing attachments. The sandbox software had 
+									detected potentially unwanted software, but no one responded to this detection. The sandbox had been producing warnings for some time 
+									before the breach was detected due to fraudulent card transactions by an external bank. <br>
+									<br>To prevent: <br><ul>
+									As per the risk of the data stored or processed by the application: <br>
+									* Ensure all login, access control failures, and server-side input validation failures can be logged with sufficient user context to 
+									identify suspicious or malicious accounts, and held for sufficient time to allow delayed forensic analysis. <br>
+									* Ensure that logs are generated in a format that can be easily consumed by a centralized log management solutions. <br>
+									* Ensure high-value transactions have an audit trail with integrity controls <br>To prevent tampering or deletion, such as append-only 
+									database tables or similar. <br>
+									* Establish effective monitoring and alerting such that suspicious activities are detected and responded to in a timely fashion. <br>
+									* Establish or adopt an incident response and recovery plan, such as NIST 800-61 rev 2 or later. <br>
+									There are commercial and open source application protection frameworks such as OWASP AppSensor (old wiki), 
+									web application firewalls such as ModSecurity with the OWASP ModSecurity Core Rule Set, and log correlation software with custom 
+									dashboards and alerting.</p>
+									</ul>
+								</li>
+							</ol>
+						<p class="abzac">So, the hacking options is big enough. Also site can be hacked if server have open <b>ssh</b> or <b>tcp</b> ports. 
+							Will be nice to make "strong" password, using maximum password length and all types of symbols(like character, number, special symbol). 
+							Better to avoid words in passwords.
+						</p>
+						<p class="abzac">Програму для Північного 
+						  товариства склав Микита Муравйов, Незважаючи на певні розходження, обидві організації 
+						  являли собою єдиний суспільний рух. Обидві готували спільний план повстання 
+						  і дотримувались єдиної тактики військового перевороту. 14 грудня 1825 року, 
+						  в день присяги новому царю Миколі І, Північне товариство вивело на Сенатську 
+						  площу в Петербурзі кілька військових частин чисельністю до 3 тисяч чоловік, 
+						  які відмовились від присяги...</p>
+						<p class="abzac">Серед декабристів були 
+						  і вихідці з подільського краю. У м. Кам'янці-Подільському розпочав свою службу 
+						  подолянин Олексій Петрович Юшневський, генерал-інтендант 2-ої армії, найближчий 
+						  друг П.І. Пестеля, редактор "Руської правди", один із директорів Південного 
+						  товариства. Вступив Юшневський на шлях революційної боротьби свідомо, Коли за 
+						  світлі ідеї довелось іти на вічну каторгу, наш земляк, як і інші декабристи, 
+						  поводив себе з великою гідністю. Жінок, які перебороли величезні труднощі, щоб 
+						  добитися у царя дозволу на добровільне заслання в Сибір, було одинадцять. Серед 
+						  них - дружина Юшневського Марія Казимирівна. Вона була вірною супутницею в уcix 
+						  тяжких випробуваннях чоловіка.</p>
+						<p class="abzac">Серед декабристів - 
+						  подолян видне місце займав Олексій Йосипович Корнілович. Він відомий не тільки, 
+						  як учасник повстання 14 грудня 1825 року, але і своєю різнобічною літературною 
+						  діяльністю.</p>
+						<p class="abzac">Був серед декабристів 
+						  і наш земляк Павло Хомич Вигодовський. Селянин за походженням, він відрізнявся 
+						  найбільш демократичними поглядами. Вигодовський був одним із тих небагатьох 
+						  декабристів, які і після засудження не склали зброї, не здали революційних позицій. 
+						  У своїх сибірських творах декабрист з нечуваною прямотою виступав проти старих 
+						  підвалин самодержавного кріпосницького ладу. 11 листопада 1854 року в Наримі 
+						  його було заарештовано вдруге.</p>
+						<p class="abzac">Під час обшуку у Вигодовського 
+						  знайшли 3588 аркушів рукопису - з різкими словами на адресу уряду, панівних 
+						  класів. Знову суд. Знову заслання в більш віддалений район Сибіру - у Вілюйськ.</p>
+						<p class="abzac">У 1856 році багатьох 
+						  декабристів амністували. Але Вигодовського, царська "милість" не торкнулася. 
+						  Вступивши на шлях революційної боротьби 22-річним юнаком, він пробув у в'язниці, 
+						  на каторзі і в засланні 55 років, майже все своє свідоме життя.</p>
+						<p class="abzac">Here is <b>Microsoft Security Intelligence Report Volume 13 English</ba>, may be helpful:
+						</p>
+						<iframe src = "file:///C:/Users/Jenia/Desktop/Another/Microsoft_Security_Intelligence_Report_Volume_13_English.pdf" style = "width: 100%; height: 500%;">
+						</iframe>
+						<p align="right">
+							<i>Соловей В.<br> 
+							Декабристи і Поділля // Прапор Жовтня, 1986. - 4 січня.</i>
+						</p>
+					</td>
+					<!--td style="background-color:black;">Interesting.</td-->
+				</tr>
+			</tbody>
+		</table>
+		<div class="siteController">
+			<script>
+				function ChangeBackgroundColor(color){
+					document.body.style.backgroundColor = color;
+				}
+				
+				function AddText(text, align="None", type="beforeend"){
+					var data = document.getElementById('MainData');
+					var result = "<p class=\"abzac\"" + ((align == "None") ? (""): (" align = \"" + align + '"')) + ">" + text + "</p>";
+					data.insertAdjacentHTML(type, result);
+					//document.getElementById("MainData").innerHTML = document.getElementById("MainData") + text;
+					//document.getElementById("MainData").textContent += text;
+					//var paragraph = document.getElementById("MainData");
+					//paragraph.textContent += text;
+					
+					
+					// <!-- beforebegin -->
+					// <p>
+					// <!-- afterbegin -->
+					//    text
+					// <!-- beforeend -->
+					// </p>
+					// <!-- afterend -->
+					
+				}
+				//AddText("<i>Hello</i>", "right");
+			</script>
+		</div
+	</body>
 </html>
