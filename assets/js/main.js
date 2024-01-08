@@ -1,3 +1,6 @@
+const date = new Date();
+document.getElementById("myAge").innerHTML = date.getFullYear() - 2006;
+
 /*
 	Prologue by HTML5 UP
 	html5up.net | @ajlkn
