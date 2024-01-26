@@ -1,0 +1,57 @@
+body {
+	/*background:#1F1F1F url(../images/pattern.png) repeat top left;*/
+	background: black; # #082208;
+	color: #bbbb88;
+	font-family: Trebuchet MS, Colibri, Constantia, Consolas, Verdana, Arial, sans-serif;
+	font-size: 16px;	
+}
+a {
+	color: #00c6e3;
+	text-decoration: none;
+	
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+a:hover {
+	#text-decoration: underline; 
+	color: #FFFFFF;
+}
+a:active {
+	color: red;
+}
+
+.abzac {
+	text-indent: 10mm;
+}
+.sup {
+	vertical-align: super; font-size: 75%;
+}
+.podpis {
+	text-align: right; font-style: italic;
+}
+.poem {
+	text-align: left; font-size: 120%; font-style: italic; margin-left: 12mm; font-family: 'Times New Roman', serif;
+}
+.fot {
+	color: #707070;
+}
+
+.unselect{
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Safari */
+     -khtml-user-select: none;   /* Konqueror HTML */
+       -moz-user-select: none;   /* Old versions of Firefox */
+        -ms-user-select: none;   /* Internet Explorer/Edge */
+            user-select: none;   /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+	user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
