@@ -59,5 +59,3 @@ Exploit Database provides a comprehensive archive of public exploits and corresp
 [OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/)
 
 OWASP Cheat Sheet Series offers concise information on various security topics, including secure coding practices, authentication, data validation, and more, aimed at helping developers and security professionals.
-
-These resources can greatly aid your penetration testing efforts by providing tools, techniques, and detailed examples for identifying and exploiting vulnerabilities.
