@@ -1,6 +1,6 @@
 ---
 title: Cybersec resources
-date: 2024-05-30 23:20:00 +0200
+date: 2024-05-31 23:20:00 +0200
 categories: []
 tags: [cybersecurity]
 description: Useful web resources and cheatsheets for cybersecurity
