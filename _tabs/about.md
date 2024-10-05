@@ -4,9 +4,12 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-Welcome to my blog! My name is Yevhenii (also Eugene, or Jenia for short). I am passionate about cybersecurity and created this site to share my knowledge and make it accessible to anyone all around the world.
+Welcome!
+I’m Yevhenii – though you might also know me as Eugene, or just Jenia. I’m passionate about cybersecurity and created this blog to share my knowledge with anyone interested in learning more about the world of tech.
 
 ### About me
-I was born in Ukraine and am currently studying computer science at university. In IT, I am particularly interested in Linux, Python, and web development, in addition to cybersecurity. I have a knowledge base in languages such as Python, C++, JavaScript, and some basic PHP and C#.
+I was born in Ukraine and I’m currently studying computer science at university. My main interests include Linux, Python, and web development, with a strong focus on cybersecurity.
 
-Regarding web technologies, I have experience with Python Flask, which I believe is an amazing framework for developing web apps.
+In terms of programming, I’ve worked with Python, C++, JavaScript, and I have some experience with PHP and C#. For web development, I’ve enjoyed using Python Flask – it’s a great framework that makes building web apps both fun and efficient.
+
+Feel free to explore the blog and dive into the content. I’m always learning, and I hope this space can help others do the same!
