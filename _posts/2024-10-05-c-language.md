@@ -10,7 +10,7 @@ As I started studying in university, I had to learn C. These are my notes, just 
 
 ## Data types
 Data type | Size | Value range
----|---|---
+----------|------|------------
 `signed int` | 2 or 4 bytes | -32,768 to 32,767
 `unsigned int` | 2 or 4 bytes | 0 to 65,535
 `float` | 4 bytes | 1.2E-38 to 3.4E+38 (6 decimal places)
