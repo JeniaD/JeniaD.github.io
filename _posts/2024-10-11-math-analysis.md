@@ -10,11 +10,17 @@ math: true
 A function has an inverse if it is **bijective** (one-to-one and onto). To verify that a linear function has an inverse, we ensure it is injective (one-to-one). For example,
 
 $$
-f(x) = kx + b $$
+f(x) = kx + b
 $$
-kx_1 + b = kx_2 + b $$
+
 $$
-kx_1 = kx_2 $$
+kx_1 + b = kx_2 + b
+$$
+
+$$
+kx_1 = kx_2 
+$$
+
 $$
 x_1 = x_2
 $$
@@ -24,9 +30,13 @@ This confirms that $f(x)$ has an inverse, as it passes the injectivity test.
 To find the inverse function:
 
 $$
-y = kx + b $$
+y = kx + b
 $$
-x = ky + b \implies ky = x - b $$
+
+$$
+x = ky + b \implies ky = x - b
+$$
+
 $$
 y = \frac{x - b}{k}
 $$
