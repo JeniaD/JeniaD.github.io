@@ -10,9 +10,12 @@ math: true
 A function has an inverse if it is **bijective** (one-to-one and onto). To verify that a linear function has an inverse, we ensure it is injective (one-to-one). For example,
 
 $$
-f(x) = kx + b \\
-kx_1 + b = kx_2 + b \\
-kx_1 = kx_2 \\
+f(x) = kx + b $$
+$$
+kx_1 + b = kx_2 + b $$
+$$
+kx_1 = kx_2 $$
+$$
 x_1 = x_2
 $$
 
@@ -21,8 +24,10 @@ This confirms that $f(x)$ has an inverse, as it passes the injectivity test.
 To find the inverse function:
 
 $$
-y = kx + b \\
-x = ky + b \implies ky = x - b \\
+y = kx + b $$
+$$
+x = ky + b \implies ky = x - b $$
+$$
 y = \frac{x - b}{k}
 $$
 
@@ -53,34 +58,98 @@ Odd functions are symmetric about the origin $(0,0)$. Examples include $f(x) = x
 Some important limits include:
 
 $$
-\lim_{x \to 0} \frac{\sin x}{x} = 1 \\
-\lim_{x \to \infty} \left(1 + \frac{k}{x}\right)^x = e^k \\
-\lim_{x \to 0} \frac{\cos x - 1}{x^2} = -\frac{1}{2} \\
+\lim_{x \to 0} \frac{\sin x}{x} = 1 
+$$
+
+$$
+\lim_{x \to \infty} \left(1 + \frac{k}{x}\right)^x = e^k 
+$$
+
+$$
+\lim_{x \to 0} \frac{\cos x - 1}{x^2} = -\frac{1}{2} 
+$$
+
+$$
 \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}
 $$
 
 ## Derivatives
 $$
-(c)' = 0 \\
-(x^n)' = nx^{n-1} \\
-(\sqrt{x})' = \frac{1}{2\sqrt{x}} \\
-\left(\frac{1}{x}\right)' = -\frac{1}{x^2} \\
-(e^x)' = e^x \\
-(a^x)' = a^x \ln a \\
-(\ln x)' = \frac{1}{x} \\
-(\log_a x)' = \frac{1}{x \ln a} \\
-(\sin x)' = \cos x \\
-(\cos x)' = -\sin x \\
-(\tan x)' = \frac{1}{\cos^2 x} = \sec^2 x \\
-(\cot x)' = -\frac{1}{\sin^2 x} = -\csc^2 x \\
-(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}} \\
-(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}} \\
-(\arctan x)' = \frac{1}{1 + x^2} \\
-(\text{arccot} x)' = -\frac{1}{1 + x^2} \\
-(f(x)g(x))' = f'(x)g(x) + f(x)g'(x) \\
-\left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2} \\
-\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x) \\
+(c)' = 0 
 $$
+
+$$
+(x^n)' = nx^{n-1} 
+$$
+
+$$
+(\sqrt{x})' = \frac{1}{2\sqrt{x}} 
+$$
+
+$$
+\left(\frac{1}{x}\right)' = -\frac{1}{x^2} 
+$$
+
+$$
+(e^x)' = e^x
+$$
+
+$$
+(a^x)' = a^x \ln a
+$$
+
+$$
+(\ln x)' = \frac{1}{x}
+$$
+
+$$
+(\log_a x)' = \frac{1}{x \ln a}
+$$
+
+$$
+(\sin x)' = \cos x 
+$$
+
+$$
+(\cos x)' = -\sin x
+$$
+
+$$
+(\tan x)' = \frac{1}{\cos^2 x} = \sec^2 x
+$$
+
+$$
+(\cot x)' = -\frac{1}{\sin^2 x} = -\csc^2 x
+$$
+
+$$
+(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}
+$$
+
+$$
+(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
+$$
+
+$$
+(\arctan x)' = \frac{1}{1 + x^2}
+$$
+
+$$
+(\text{arccot} x)' = -\frac{1}{1 + x^2}
+$$
+
+$$
+(f(x)g(x))' = f'(x)g(x) + f(x)g'(x)
+$$
+
+$$
+\left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}
+$$
+
+$$
+\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)
+$$
+
 
 ---
 
@@ -137,7 +206,3 @@ f(x) = M_n(f, x) + R_n(x)
 $$
 
 This shows that the function can be represented as its polynomial approximation plus the error term.
-
-<hr>
-
-$f(x) = f(x_0)+f'(x_0)(x-x_0)$
