@@ -1,10 +1,25 @@
 ---
 title: Math analysis course cheatsheet
 date: 2024-10-11 19:00:00 +0200
-categories: [University]
-tags: []
+categories: [University, math]
+tags: [math]
 math: true
 ---
+
+## Trigonometric functions
+
+| Angle (°) | Radians   | sin(θ)   | cos(θ)   | tan(θ)   | csc(θ)   | sec(θ)   | cot(θ)   |
+|-----------|-----------|----------|----------|----------|----------|----------|----------|
+| 0°        | 0         | 0        | 1        | 0        | ∞        | 1        | ∞        |
+| 30°       | π/6       | 1/2      | √3/2     | 1/√3     | 2        | 2/√3     | √3       |
+| 45°       | π/4       | √2/2     | √2/2     | 1        | √2       | √2       | 1        |
+| 60°       | π/3       | √3/2     | 1/2      | √3       | 2/√3     | 2        | 1/√3     |
+| 90°       | π/2       | 1        | 0        | ∞        | 1        | ∞        | 0        |
+| 120°      | 2π/3      | √3/2     | -1/2     | -√3      | 2/√3     | -2       | -1/√3    |
+| 135°      | 3π/4      | √2/2     | -√2/2    | -1       | √2       | -√2      | -1       |
+| 150°      | 5π/6      | 1/2      | -√3/2    | -1/√3    | 2        | -2/√3    | -√3      |
+| 180°      | π         | 0        | -1       | 0        | ∞        | -1       | ∞        |
+
 
 ## Inverse Functions
 A function has an inverse if it is **bijective** (one-to-one and onto). To verify that a linear function has an inverse, we ensure it is injective (one-to-one). For example,
@@ -84,6 +99,7 @@ $$
 $$
 
 ## Derivatives
+
 $$
 (c)' = 0 
 $$
