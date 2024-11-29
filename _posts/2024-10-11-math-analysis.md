@@ -1,5 +1,5 @@
 ---
-title: Math analysis course cheatsheet
+title: Calculus course
 date: 2024-10-11 19:00:00 +0200
 categories: [University, math]
 tags: [math]
