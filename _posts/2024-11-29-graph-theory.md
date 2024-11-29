@@ -1,7 +1,7 @@
 ---
 title: Graph Theory
 date: 2024-11-29 20:14:00 +0200
-categories: [University, Math]
+categories: [University, math]
 tags: [Math, Graph Theory]
 math: true
 ---
@@ -86,9 +86,9 @@ Steps:
 2. **Update Distances**:
    - For the current vertex, consider all its unvisited neighbors.
    - Calculate the tentative distance to each neighbor as:
-     \[
+     $$
      \text{Tentative distance} = \text{Current vertex distance} + \text{Edge weight}
-     \]
+     $$
    - If this distance is smaller than the previously recorded distance, update it.
 
 3. **Mark as Visited**:
