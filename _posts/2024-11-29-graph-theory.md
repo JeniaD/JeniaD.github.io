@@ -2,7 +2,7 @@
 title: Graph Theory
 date: 2024-11-29 20:14:00 +0200
 categories: [University, math]
-tags: [Math, Graph Theory]
+tags: [math]
 math: true
 ---
 
