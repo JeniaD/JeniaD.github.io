@@ -1,5 +1,5 @@
 ---
-title: Graph Theory
+title: Graph theory
 date: 2024-11-29 20:14:00 +0200
 categories: [University, math]
 tags: [math]
