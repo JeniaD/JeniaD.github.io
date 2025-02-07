@@ -6,6 +6,8 @@ tags: [math]
 math: true
 ---
 
+This is my notes I made studying in my calculus course in university. The content of the course was, of course, broader, but this is the things which were required to know on the final exam.
+
 ## Trigonometric functions
 
 | Angle (°) | Radians   | sin(θ)   | cos(θ)   | tan(θ)   | csc(θ)   | sec(θ)   | cot(θ)   |
@@ -100,82 +102,42 @@ $$
 
 ## Derivatives
 
-$$
-(c)' = 0 
-$$
+$(c)' = 0$
 
-$$
-(x^n)' = nx^{n-1} 
-$$
+$(x^n)' = nx^{n-1}$
 
-$$
-(\sqrt{x})' = \frac{1}{2\sqrt{x}} 
-$$
+$(\sqrt{x})' = \frac{1}{2\sqrt{x}}$
 
-$$
-\left(\frac{1}{x}\right)' = -\frac{1}{x^2} 
-$$
+$\left(\frac{1}{x}\right)' = -\frac{1}{x^2}$
 
-$$
-(e^x)' = e^x
-$$
+$(e^x)' = e^x$
 
-$$
-(a^x)' = a^x \ln a
-$$
+$(a^x)' = a^x \ln a$
+$(\ln x)' = \frac{1}{x}$
 
-$$
-(\ln x)' = \frac{1}{x}
-$$
+$(\log_a x)' = \frac{1}{x \ln a}$
 
-$$
-(\log_a x)' = \frac{1}{x \ln a}
-$$
+$(\sin x)' = \cos x$
 
-$$
-(\sin x)' = \cos x 
-$$
+$(\cos x)' = -\sin x$
 
-$$
-(\cos x)' = -\sin x
-$$
+$(\tan x)' = \frac{1}{\cos^2 x} = \sec^2 x$
 
-$$
-(\tan x)' = \frac{1}{\cos^2 x} = \sec^2 x
-$$
+$(\cot x)' = -\frac{1}{\sin^2 x} = -\csc^2 x$
 
-$$
-(\cot x)' = -\frac{1}{\sin^2 x} = -\csc^2 x
-$$
+$(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}$
 
-$$
-(\arcsin x)' = \frac{1}{\sqrt{1 - x^2}}
-$$
+$(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}$
 
-$$
-(\arccos x)' = -\frac{1}{\sqrt{1 - x^2}}
-$$
+$(\arctan x)' = \frac{1}{1 + x^2}$
 
-$$
-(\arctan x)' = \frac{1}{1 + x^2}
-$$
+$(\text{arccot} x)' = -\frac{1}{1 + x^2}$
 
-$$
-(\text{arccot} x)' = -\frac{1}{1 + x^2}
-$$
+$(f(x)g(x))' = f'(x)g(x) + f(x)g'(x)$
 
-$$
-(f(x)g(x))' = f'(x)g(x) + f(x)g'(x)
-$$
+$\left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}$
 
-$$
-\left( \frac{f(x)}{g(x)} \right)' = \frac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}
-$$
-
-$$
-\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)
-$$
-
+$\frac{d}{dx} f(g(x)) = f'(g(x)) \cdot g'(x)$
 
 ---
 
@@ -208,27 +170,74 @@ $$
 ## Taylor's Theorem
 Taylor's theorem states that a function $ f(x) $ can be approximated by a polynomial $ M_n(f, x) $ near a point $ x_0 $. 
 
-### Taylor Polynomial
 The Taylor polynomial of degree $ n $ around the point $ x_0 $ is given by:
 
 $$
-M_n(f, x) = f(x_0) + f'(x_0)(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n
-$$
-
-### Remainder Term
-The remainder term $ R_n $ quantifies the error between the actual function and the Taylor polynomial:
-
-$$
-R_n(x) = \frac{f^{(n + 1)}(c)}{(n + 1)!}(x - x_0)^{n + 1}
-$$
-
-where $ c $ is some point between $ x_0 $ and $ x $.
-
-### Complete Taylor Expansion
-The complete Taylor expansion of $ f(x) $ around $ x_0 $ can be expressed as:
-
-$$
-f(x) = M_n(f, x) + R_n(x)
+T_n(f, x, x_0) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0) + \frac{f''(x_0)}{2!}(x - x_0)^2 + \cdots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n
 $$
 
 This shows that the function can be represented as its polynomial approximation plus the error term.
+
+## Integration
+### Substitution Method
+
+The substitution method (or *u-substitution*) is used to simplify integrals by making a substitution that reduces the integrand to a basic form.
+
+**General Idea:**  
+Let $u = g(x)$ so that $du = g'(x) dx$. The integral becomes:
+$$
+\int f(g(x)) g'(x) dx = \int f(u) du.
+$$
+
+**Example:**  
+Evaluate
+$$
+\int 2x \cos(x^2) dx.
+$$
+
+Let $u = x^2$ so that derivative of it is $du = 2x dx$. Then, we can find $dx=\frac{1}{2x}du$. After we substitute, integral then transforms to:
+$$
+\int 2x \cos(u) \frac{1}{2x} du = \int \cos(u) du = \sin(u) + C = \sin(x^2) + C.
+$$
+
+---
+
+### Integration by Parts
+
+Integration by parts is based on the product rule for differentiation. The formula is:
+$$
+\int u' v = uv - \int u v' .
+$$
+
+**Example:**  
+Evaluate
+$$
+\int x e^x dx.
+$$
+
+Choose $u = x$ (later when we'll find derivation of it, it will turn to $1$, which is helpful) and $dv = e^x dx$ ($ e^{x} $ will not change as $ (e^{x})' = e^{x} $). Then,
+$$
+\int x e^x dx = x e^x - \int e^x dx = x e^x - e^x + C = e^x(x - 1) + C.
+$$
+
+---
+
+### Partial Fractions
+
+Partial fractions break down complex rational functions into simpler fractions that are easier to integrate.
+
+**Example:**  
+Evaluate
+$$
+\int \frac{1}{(x-1)(x+2)} dx.
+$$
+
+Express the integrand as:
+$$
+\frac{1}{(x-1)(x+2)} = \frac{A}{x-1} + \frac{B}{x+2}.
+$$
+Solve for $A$ and $B$ by clearing denominators and equating coefficients. After finding the constants, integrate term by term:
+$$
+\int \frac{A}{x-1} dx + \int \frac{B}{x+2} dx = A \ln|x-1| + B \ln|x+2| + C.
+$$
+
