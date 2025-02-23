@@ -45,10 +45,9 @@ Thus, it is a good idea to stick to the default models used by the extension I w
 
 ## Setup  
 The first thing we'll need is some kind of extension to fetch completions from Ollama and suggest them in our development environment.  
-I decided to go with **Continue**. After installing it, you can see it in the list of extensions on the left side of your screen.
+I decided to go with [Continue](https://docs.continue.dev/). After installing it, you can see it in the list of extensions on the left side of your screen.
 
-The next step is installing a model for autocomplete. You can find all available models here:  
-[https://github.com/ollama/models](https://github.com/ollama/models)
+The next step is installing a model for autocomplete. You can find all available models [here](https://ollama.com/library).
 
 ```bash
 $ ollama pull llama3.1:8b
@@ -64,3 +63,6 @@ It might also be useful if you have an Internet connection and the code you are 
 
 Restart the editor, and you should see autocomplete suggestions for your code as you type.
 You can also select a part of your code and ask the LLM about it directly in the chat.
+
+P.S.: after some time, I've decided to also add free Mistral API to the chat models. It is important not to add it as autocomplete, though.
+I would say Llama is pretty neat solution, and works absolutely fine. The only reason to install Mistral alongside with Llama was the fact that sometimes I might need faster results while working with non-confidential information and being connected to the Internet. However, again, local Llama works absolutely fine and is enough, in my opinion.
